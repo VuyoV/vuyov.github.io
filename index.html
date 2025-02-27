@@ -87,6 +87,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="feature">
                 <h3>Explore Our Brands</h3>
                 <p><a href="https://impact.com/">Shop</a> these deals.</p>
+                <script>
+        document.getElementById("fetchData").addEventListener("click", function() {
+            fetch("http://httpbin.org/get?key=GTM-KVZ3Q52M=TX123")
+                .then(response => response.json())
+                .then(data => {
+                    console.log("API Response:", data);
+
+                    // Push data to GTM dataLayer
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({
+                        event: "apiResponse",
+                        origin: data.origin,
+                        url: data.url
+                    });
+
+                    alert("Data pushed to GTM!");
+                })
+                .catch(error => console.error("Error fetching data:", error));
+        });
+    </script>
             </div>
             <div class="feature">
                 <h3>High Conversion</h3>
