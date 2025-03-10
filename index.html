@@ -86,7 +86,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="features" id="services">
             <div class="feature">
                 <h3>Explore Our Brands</h3>
-                <p><a href="https://impact.com/">Shop</a> these deals.</p>
+                <p>
+
+<a href="https://impact.com/"><button id="apiButton">Shop These Deals</button></a> </p>
                 <script>
         // Example GTM data layer
         window.dataLayer = window.dataLayer || [];
@@ -100,7 +102,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             });
 
             // API URL
-            let apiUrl = `http://httpbin.org/get?key=GTM-KVZ3Q52M=TX123${params.toString()}`;
+            let apiUrl = `https://httpbin.org/get?${params.toString()}`;
 
             // Send GET request
             fetch(apiUrl)
